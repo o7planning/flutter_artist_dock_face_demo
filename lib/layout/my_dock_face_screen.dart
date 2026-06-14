@@ -3,6 +3,8 @@ import 'package:flutter_artist_dock_face/flutter_artist_dock_face.dart';
 
 import '../menu/dock_menu_model.dart';
 
+//*** /layout/my_dock_face_screen.dart  ***//
+
 abstract class MyDockFaceScreen extends DockFaceScreen {
   final String currentRoute;
 
@@ -10,7 +12,6 @@ abstract class MyDockFaceScreen extends DockFaceScreen {
 
   @override
   void onNavigateTo(BuildContext context, String route) {
-    // Centralized route switcher navigating seamlessly between screen modules
     Navigator.of(context).pushReplacementNamed(route);
   }
 
@@ -21,9 +22,7 @@ abstract class MyDockFaceScreen extends DockFaceScreen {
 
   @override
   DockFaceStyle buildStyle(BuildContext context) {
-    // Defining matching luxury navy branding palette tokens
     const Color navyBaseDarkSidebar = Color(0xFF1E2541);
-    const Color navyBaseDarkTopbar = Color(0xFF1E2531);
     const Color slateLightBackground = Color(0xFFF4F6FA);
 
     return const DockFaceStyle(
@@ -37,10 +36,9 @@ abstract class MyDockFaceScreen extends DockFaceScreen {
         itemSpacing: 8.0,
         iconSize: 24.0,
         borderRadius: BorderRadius.all(Radius.circular(8)),
+        // ✅ Fix error
         hoverColor: Color(0x13FFFFFF),
-        // White transparency layer overlay for mouse hover
         selectedColor: Color(0x26FFFFFF),
-        // Elevated highlighted tone for operational selected states
         titleStyle: TextStyle(
           fontSize: 10,
           fontWeight: FontWeight.w500,
@@ -86,7 +84,6 @@ abstract class MyDockFaceScreen extends DockFaceScreen {
     );
   }
 
-  // Mandatory placeholders for standard abstract DockFace items
   @override
   DockMenuItemModel? getDebugDockMenuItemModel() => null;
 

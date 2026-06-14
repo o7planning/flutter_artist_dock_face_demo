@@ -17,6 +17,12 @@ class MyApp extends StatelessWidget {
       title: 'flutter_artist_dock_face Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(useMaterial3: true),
+      builder: (context, child) {
+        return Material(
+          color: const Color(0xFFF4F6FA),
+          child: child,
+        );
+      },
       initialRoute: '/dashboard',
       routes: {
         '/dashboard': (context) => const DashboardScreen(),
